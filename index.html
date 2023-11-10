@@ -1,101 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f3f3f3;
-            text-align: center;
-            
-        }
+    <link rel="stylesheet" href="./style.css">
 
-        .container {
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 20px;
-            border-radius: 10px;
-            width: 100%;
-            max-width: 400px;
-            margin: 0 auto;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-        }
-
-        h1 {
-            color: #333;
-        }
-
-        form {
-            margin: 20px 0;
-        }
-
-        input[type="number"] {
-            color: #333;
-            width: 100%;
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        input[type="submit"] {
-            width: 100%;
-            padding: 10px;
-            font-size: 16px;
-            background-color: #8A8CE1;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .result {
-            font-size: 18px;
-            color: #a50b0b;
-            margin: 20px 0;
-            background-color: rgba(161, 86, 203, 0.9);
-            padding: 10px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        }
-    </style>
 </head>
-<body>
-    <div class="container">
-        <h1>Grade Checker</h1>
+<body class="body">
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="container"> 
+        <h1 class="headen">Grade Checker</h1>
         <form id="grade-form">
             <label for="percentage">Enter Percentage:</label>
             <input type="number" id="percentage" step="0.01" placeholder="Enter percentage (0-100)" required>
+        
+            
+        
             <input type="submit" value="Check Grade">
+            
         </form>
+        
         <div class="result" id="result"></div>
+        
     </div>
 
-    <script>
-        document.getElementById("grade-form").addEventListener("submit", function (event) {
-            event.preventDefault();
-            const percentageInput = document.getElementById("percentage");
-            const result = document.getElementById("result");
-
-            if (!percentageInput.value) {
-                result.textContent = "Please enter a percentage.";
-            } else {
-                const percentage = parseFloat(percentageInput.value);
-                let grade;
-
-                if (percentage >= 80) {
-                    grade = "A+";
-                } else if (percentage >= 70) {
-                    grade = "A";
-                } else if (percentage >= 60) {
-                    grade = "B";
-                } else if (percentage >= 50) {
-                    grade = "C";
-                } else {
-                    grade = "F";
-                }
-
-                result.textContent = `Percentage: ${percentage}% - Grade: ${grade}`;
-            }
-        });
-    </script>
+    <script src="./script.js"></script>
 </body>
 </html>
